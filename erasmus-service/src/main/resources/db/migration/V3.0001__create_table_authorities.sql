@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS authorities
+(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    student_id BIGINT NOT NULL,
+    name VARCHAR(50) NOT NULL
+);

@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS programs
+(
+    id                   BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name                 VARCHAR(100) NOT NULL,
+    description          VARCHAR(255),
+    link                 VARCHAR(255),
+    abbreviation         VARCHAR(10)  NOT NULL,
+    study_field          VARCHAR(100) NOT NULL,
+    created_at           DATETIME     NOT NULL,
+    trip_date            DATETIME     NOT NULL,
+    application_deadline DATETIME     NOT NULL,
+    student_id           BIGINT       NOT NULL
+);
+INSERT INTO programs (name, description, link, abbreviation, study_field, created_at, trip_date, application_deadline,
+                      student_id)
+VALUES ('Erasmus+ Computer Science Exchange', 'Exchange program for Computer Science students',
+        'http://example.com/erasmus-cs', 'ECS', 'JAVA_DEVELOPMENT', '2024-01-01 00:00:00', '2024-06-01 00:00:00',
+        '2023-12-01 00:00:00', 1),
+       ('Erasmus+ Software Engineering Exchange', 'Exchange program for Software Engineering students',
+        'http://example.com/erasmus-se', 'ESE', 'JAVA_QA', '2024-02-01 00:00:00', '2024-07-01 00:00:00',
+        '2024-01-01 00:00:00', 2),
+       ('Erasmus+ Information Systems Exchange', 'Exchange program for Information Systems students',
+        'http://example.com/erasmus-is', 'EIS', 'JS_QA', '2024-03-01 00:00:00', '2024-08-01 00:00:00',
+        '2024-02-01 00:00:00', 3),
+       ('Erasmus+ DevOps Exchange', 'Exchange program for DevOps students', 'http://example.com/erasmus-dv', 'EDV',
+        'DEVOPS', '2024-01-15 00:00:00', '2024-06-15 00:00:00', '2023-12-15 00:00:00', 4),
+       ('Erasmus+ Data Science Exchange', 'Exchange program for Data Science students', 'http://example.com/erasmus-ds',
+        'EDS', 'DATA_SCIENCE', '2024-02-15 00:00:00', '2024-07-15 00:00:00', '2024-01-15 00:00:00', 5),
+       ('Erasmus+ Cyber Security Exchange', 'Exchange program for Cyber Security students',
+        'http://example.com/erasmus-cs', 'ECS', 'CYBER_SECURITY', '2024-03-15 00:00:00', '2024-08-15 00:00:00',
+        '2024-02-15 00:00:00', 6),
+       ('Erasmus+ AI Exchange', 'Exchange program for Artificial Intelligence students',
+        'http://example.com/erasmus-ai', 'EAI', 'ARTIFICIAL_INTELLIGENCE', '2024-04-15 00:00:00', '2024-09-15 00:00:00',
+        '2024-03-15 00:00:00', 7),
+       ('Erasmus+ SE Exchange', 'Exchange program for Software Engineering students', 'http://example.com/erasmus-se',
+        'ESE', 'SOFTWARE_ENGINEERING', '2024-05-15 00:00:00', '2024-10-15 00:00:00', '2024-04-15 00:00:00', 8),
+       ('Erasmus+ IS Exchange', 'Exchange program for Information Systems students', 'http://example.com/erasmus-is',
+        'EIS', 'INFORMATION_SYSTEMS', '2024-06-15 00:00:00', '2024-11-15 00:00:00', '2024-05-15 00:00:00', 9);

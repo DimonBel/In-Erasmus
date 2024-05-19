@@ -1,0 +1,40 @@
+CREATE TABLE IF NOT EXISTS students
+(
+    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    faculty_id      BIGINT       NOT NULL,
+    first_name      VARCHAR(255) NOT NULL,
+    last_name       VARCHAR(255) NOT NULL,
+    email           VARCHAR(255) NOT NULL,
+    avatar_url      VARCHAR(1024)         DEFAULT 'https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png',
+    password        VARCHAR(100) NOT NULL,
+    date_of_birth   DATE         NOT NULL,
+    is_graduated    BOOLEAN      NOT NULL DEFAULT FALSE,
+    enrollment_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    role            VARCHAR(50)  NOT NULL DEFAULT 'STUDENT',
+    created_at      TIMESTAMP             DEFAULT CURRENT_TIMESTAMP,
+    updated_at      TIMESTAMP             DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (faculty_id, first_name, last_name, email, password, date_of_birth, is_graduated, enrollment_date,
+                      role, avatar_url)
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', 'password123', '2000-05-15', FALSE, '2023-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1170w'),
+       (1, 'Jane', 'Smith', 'jane.smith@example.com', 'password123', '2001-06-20', FALSE, '2023-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D%201287w'),
+       (2, 'Alice', 'Johnson', 'alice.johnson@example.com', 'password123', '1999-03-10', TRUE, '2017-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1287w'),
+       (3, 'Bob', 'Brown', 'bob.brown@example.com', 'password123', '2000-08-25', FALSE, '2023-09-01', 'STUDENT',
+        'https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1287w'),
+       (4, 'Charlie', 'Davis', 'charlie.davis@example.com', 'password123', '2000-02-14', FALSE, '2023-09-01',
+        'STUDENT',
+        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D%201364w'),
+       (5, 'David', 'Wilson', 'david.wilson@example.com', 'password123', '2000-12-01', FALSE, '2023-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1170w'),
+       (6, 'Eve', 'Taylor', 'eve.taylor@example.com', 'password123', '1999-11-11', TRUE, '2017-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1480w'),
+       (7, 'Frank', 'White', 'frank.white@example.com', 'password123', '2001-04-30', FALSE, '2023-09-01', 'STUDENT',
+        'ihttps://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1480w'),
+       (8, 'Grace', 'Hall', 'grace.hall@example.com', 'password123', '1998-09-09', TRUE, '2016-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1170w'),
+       (9, 'Hannah', 'King', 'hannah.king@example.com', 'password123', '2000-01-15', FALSE, '2023-09-01', 'STUDENT',
+        'https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1480w');
